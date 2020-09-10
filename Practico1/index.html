@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <body class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <canvas class="" id="canvas" width="800" height="600" style="border:#000 solid 1px;"></canvas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button id="cargarimagen" class="btn btn-primary" type="button">Cargar Imagen</button>
+        <input id="imagenacargar" type="file" accept="image/png, .jpeg, .jpg" style="display:none;">
+        <button id="original" class="btn btn-primary" type="button" name="button">Original</button>
+        <button id="escalagrises" class="btn btn-secondary" type="button" name="button">Grises</button>
+        <button id="negativo" class="btn btn-info" type="button" name="button">Negativo</button>
+        <button id="sepia" class="btn btn-dark" type="button" name="button">Sepia</button>
+        <label>Brillo</label><input id="brillo" type="range" min="0" max="10" step="0.01">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button id="borrartodo" class="btn btn-danger" type="button" name="button">Borrar Todo</button>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="js.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</html>
