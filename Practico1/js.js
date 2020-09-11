@@ -102,6 +102,7 @@ function blur() {//BLUR 3x3
       setB(imageData,x,y,(getB(imageData,x-1,y-1)+getB(imageData,x-1,y)+getB(imageData,x-1,y+1)+getB(imageData,x,y-1)+getB(imageData,x+1,y-1)+getB(imageData,x,y)+getB(imageData,x+1,y+1)+getB(imageData,x+1,y)+getB(imageData,x,y+1))/9);
     }
   }
+  ctx.putImageData(imageData, 0, 0);
 }
 
 function getR (imageData,x,y){
