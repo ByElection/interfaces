@@ -92,6 +92,18 @@ function brillo() {
   ctx.putImageData(imageData, 0, 0);
 }
 
+function blur() {//BLUR 3x3
+  ctx.drawImage(imagen, 0, 0, imageScaledWidth, imageScaledHeight);
+  let imageData = ctx.getImageData(0, 0, imageScaledWidth, imageScaledHeight);
+  for (let x = 1; x < imageData.width-1; x++) {
+    for (let y = 1; y < imageData.height-1; y++) {
+      setR(imageData,x,y,(getR(imageData,x-1,y-1)+getR(imageData,x-1,y)+getR(imageData,x-1,y+1)+getR(imageData,x,y-1)+getR(imageData,x+1,y-1)+getR(imageData,x,y)+getR(imageData,x+1,y+1)+getR(imageData,x+1,y)+getR(imageData,x,y+1))/9);
+      setG(imageData,x,y,(getG(imageData,x-1,y-1)+getG(imageData,x-1,y)+getG(imageData,x-1,y+1)+getG(imageData,x,y-1)+getG(imageData,x+1,y-1)+getG(imageData,x,y)+getG(imageData,x+1,y+1)+getG(imageData,x+1,y)+getG(imageData,x,y+1))/9);
+      setB(imageData,x,y,(getB(imageData,x-1,y-1)+getB(imageData,x-1,y)+getB(imageData,x-1,y+1)+getB(imageData,x,y-1)+getB(imageData,x+1,y-1)+getB(imageData,x,y)+getB(imageData,x+1,y+1)+getB(imageData,x+1,y)+getB(imageData,x,y+1))/9);
+    }
+  }
+}
+
 function getR (imageData,x,y){
   let index = (x+y*imageData.width)*4;
   return imageData.data[index];
@@ -133,4 +145,5 @@ function eventos() {
   document.querySelector('#negativo').addEventListener("click",negativo);
   document.querySelector('#sepia').addEventListener("click",sepia);
   document.querySelector('#borrartodo').addEventListener("click",borrarTodo);
+  document.querySelector('#blur').addEventListener("click",blur);
 }
