@@ -148,11 +148,29 @@ function brillo() {
 function blur() {//BLUR 3x3
   ctx.drawImage(imagen, 0, 0, imageScaledWidth, imageScaledHeight);
   let imageData = ctx.getImageData(0, 0, imageScaledWidth, imageScaledHeight);
-  for (let x = 1; x < imageData.width-1; x++) {
-    for (let y = 1; y < imageData.height-1; y++) {
-      setR(imageData,x,y,(getR(imageData,x-1,y-1)+getR(imageData,x-1,y)+getR(imageData,x-1,y+1)+getR(imageData,x,y-1)+getR(imageData,x+1,y-1)+getR(imageData,x,y)+getR(imageData,x+1,y+1)+getR(imageData,x+1,y)+getR(imageData,x,y+1))/9);
-      setG(imageData,x,y,(getG(imageData,x-1,y-1)+getG(imageData,x-1,y)+getG(imageData,x-1,y+1)+getG(imageData,x,y-1)+getG(imageData,x+1,y-1)+getG(imageData,x,y)+getG(imageData,x+1,y+1)+getG(imageData,x+1,y)+getG(imageData,x,y+1))/9);
-      setB(imageData,x,y,(getB(imageData,x-1,y-1)+getB(imageData,x-1,y)+getB(imageData,x-1,y+1)+getB(imageData,x,y-1)+getB(imageData,x+1,y-1)+getB(imageData,x,y)+getB(imageData,x+1,y+1)+getB(imageData,x+1,y)+getB(imageData,x,y+1))/9);
+  for (let x = 0; x < imageData.width; x++) {
+    for (let y = 0; y < imageData.height; y++) {
+      let kernelx = [x-1,x,x+1,
+                      x-1,x,x+1,
+                      x-1,x,x+1];
+      let kernely = [y-1,y-1,y-1,
+                      y,  y,  y,
+                      y+1,y+1,y+1];
+      let sumar=0;
+      let sumag=0;
+      let sumab=0;
+      let dividendo=0;
+      for (var i = 0; i < kernelx.length; i++) {
+        if (!(kernelx[i]<0 || kernely[i]<0 || kernelx[i]>imageData.width-1 || kernely[i]>imageData.height-1)) {
+          sumar=sumar+getR(imageData,kernelx[i],kernely[i]);
+          sumag=sumag+getG(imageData,kernelx[i],kernely[i]);
+          sumab=sumab+getB(imageData,kernelx[i],kernely[i]);
+          dividendo++;
+        }
+      }
+      setR(imageData,x,y,sumar/dividendo);
+      setG(imageData,x,y,sumag/dividendo);
+      setB(imageData,x,y,sumab/dividendo);
     }
   }
   ctx.putImageData(imageData, 0, 0);
