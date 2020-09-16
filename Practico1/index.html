@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  </head>
-  <body class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <canvas class="" id="canvas" width="800" height="600" style="border:#000 solid 1px;"></canvas>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="container-fluid">
+  <nav class="navbar navbar-dark bg-dark">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <button id="borrartodo" class="btn btn-danger" type="button" name="button">Nuevo</button>
+      </li>
+      <li class="nav-item">
         <button id="cargarimagen" class="btn btn-primary" type="button">Cargar Imagen</button>
         <input id="imagenacargar" type="file" accept="image/png, .jpeg, .jpg" style="display:none;">
-        <button id="original" class="btn btn-primary" type="button" name="button">Original</button>
-        <button id="escalagrises" class="btn btn-secondary" type="button" name="button">Grises</button>
-        <button id="negativo" class="btn btn-info" type="button" name="button">Negativo</button>
-        <button id="sepia" class="btn btn-dark" type="button" name="button">Sepia</button>
-        <label>Brillo</label><input id="brillo" type="range" min="0" max="10" step="0.01">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+      </li>
+      <li class="nav-item">
+        <button id="pincel" class="btn btn-success" type="button" name="button"><img src="img/pincel.png" alt="Pincel"></button>
+      </li>
+      <li class="nav-item">
+        <button id="borrador" class="btn btn-danger" type="button" name="button"><img class="borrador" src="img/borrador.png" alt="Borrador"></button>
+      </li>
+      <li class="nav-item">
+        <button id="puntero" class="btn btn-success" type="button" name="button"><img class="cursor" src="img/puntero.png" alt="Puntero"></button>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filtros
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button id="original" class="btn btn-primary dropdown-item" type="button" name="button">Original</button>
+            <button id="escalagrises" class="btn btn-secondary dropdown-item" type="button" name="button">Grises</button>
+            <button id="negativo" class="btn btn-info dropdown-item" type="button" name="button">Negativo</button>
+            <button id="sepia" class="btn btn-dark dropdown-item" type="button" name="button">Sepia</button>
+            <button id="blur" class="btn btn-primary dropdown-item" type="button" name="button">Blur</button>
+            <div class="dropdown-item">
+              <div>
+                <label>Saturacion</label>
+              </div>
+              <div>
+                <input id="saturacion" type="range" min="0" max="10" step="0.5" value="1">
+              </div>
+            </div>
+            <div class="dropdown-item">
+              <div>
+                <label>Brillo</label>
+              </div>
+              <div>
+                <input id="brillo" type="range" min="0" max="10" step="0.01" value="1">
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button id="conservarcambio" class="btn btn-success" type="button" name="button">Guardar Capa</button>
+      </li>
+      <li class="nav-item">
         <button id="descargarimagen" class="btn btn-success" type="button" name="button">Descargar Imagen</button>
-        <button id="borrartodo" class="btn btn-danger" type="button" name="button">Borrar Todo</button>
-        <button id="conservarcambio" class="btn btn-success" type="button" name="button">Conservar Cambios</button>
-        <button id="blur" class="btn btn-primary" type="button" name="button">Blur</button>
-        <label>Saturacion</label><input id="saturacion" type="range" min="0" max="10" step="0.5">
-      </div>
-    </div>
+      </li>
+    </ul>
+    </nav>
     <div class="row">
       <div class="col-12">
-        <button id="pincel" class="btn btn-success" type="button" name="button">Pincel</button>
-        <button id="borrador" class="btn btn-danger" type="button" name="button">Borrador</button>
-        <button id="puntero" class="btn btn-success" type="button" name="button">Puntero</button>
+        <canvas class="" id="canvas" style="border:#000 solid 1px;"></canvas>
       </div>
     </div>
   </body>
@@ -43,4 +73,4 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</html>
+  </html>
