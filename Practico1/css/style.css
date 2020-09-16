@@ -1,0 +1,12 @@
+img.borrador{
+  width: 45px;
+}
+img.cursor{
+  width: 30px;
+}
+.nav-item{
+  margin-left: 5px;
+}
+body{
+  background-image: url('../img/fondo.jpg');
+}

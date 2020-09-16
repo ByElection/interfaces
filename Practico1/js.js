@@ -11,7 +11,7 @@ function borrarTodo(){
   canvas.height = 600;
   ctx.fillStyle = "#FFFFFF";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  imagen.src="";
+  conservarCambio();
 }
 
 function startPosition(){
@@ -289,5 +289,5 @@ function eventos() {
   document.querySelector('#conservarcambio').addEventListener("click",conservarCambio);
   document.querySelector('#blur').addEventListener("click",blur);
   document.querySelector("#saturacion").addEventListener("change",saturacion);
-  conservarCambio();
+  borrarTodo();
 }
