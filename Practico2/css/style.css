@@ -1,3 +1,20 @@
-body{
+body#body{
   background-color: #7C7C7C;
+}
+input{
+  width: 50px;
+}
+label{
+  color: yellow;
+}
+header img{
+  display: block;
+  margin: auto;
+}
+header{
+  background-color: #06664A;
+}
+canvas{
+  display: block;
+  margin: auto;
 }

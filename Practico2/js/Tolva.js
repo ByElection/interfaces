@@ -1,6 +1,6 @@
 class Tolva extends Figura{
   constructor(x) {
-    super(x,0);
+    super(x,50);
     this.imagen = document.querySelector("#imagentolva");
   }
   dibujar(){

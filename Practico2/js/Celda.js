@@ -22,4 +22,7 @@ class Celda extends Figura{
     return {x:this.x+this.width/2,
             y:this.y+this.height/2};
   }
+  getficha(){
+    return this.ficha;
+  }
 }

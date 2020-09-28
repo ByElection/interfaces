@@ -4,18 +4,44 @@
     <meta charset="utf-8">
     <title>4 en linea</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   </head>
-  <body>
-    <canvas id="canvas" width="1024" height="768"></canvas>
-    <img src="img/celda.png" id="imagencelda" hidden>
-    <img src="img/ficha.png" id="imagenficha" hidden>
-    <img src="img/tolva.png" id="imagentolva" hidden>
-    <script type="text/javascript" src="js/Figura.js"></script>
-    <script type="text/javascript" src="js/Celda.js"></script>
-    <script type="text/javascript" src="js/Ficha.js"></script>
-    <script type="text/javascript" src="js/Tolva.js"></script>
-    <script type="text/javascript" src="js/Tablero.js"></script>
-    <script type="text/javascript" src="js/Jugador.js"></script>
-    <script type="text/javascript" src="js/Main.js"></script>
+  <header>
+    <div class="row">
+      <div class="col-12">
+        <img src="img/banner.png" alt="">
+      </div>
+    </div>
+  </header>
+  <body id="body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-4">
+          <label>Columnas: </label><input id="columnas" type="number" value="7" max="10">
+          <label>Filas: </label><input id="filas" type="number" value="6" max="10">
+          <button id="juegonuevo" class="btn btn-primary" type="button">Juego Nuevo</button>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <canvas id="canvas" width="1024" height="768"></canvas>
+        </div>
+      </div>
+      <img src="img/celda.png" id="imagencelda" hidden>
+      <img src="img/ficha.png" id="imagenficha" hidden>
+      <img src="img/tolva.png" id="imagentolva" hidden>
+      <script type="text/javascript" src="js/Figura.js"></script>
+      <script type="text/javascript" src="js/Celda.js"></script>
+      <script type="text/javascript" src="js/Ficha.js"></script>
+      <script type="text/javascript" src="js/Tolva.js"></script>
+      <script type="text/javascript" src="js/Tablero.js"></script>
+      <script type="text/javascript" src="js/Jugador.js"></script>
+      <script type="text/javascript" src="js/Main.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </div>
   </body>
 </html>
