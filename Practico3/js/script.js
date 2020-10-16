@@ -3,6 +3,7 @@ window.addEventListener('scroll', () => {
   document.body.style.setProperty('--scroll',scroll);
   console.log("scroll: "+scroll)
 }, false);
+
 let countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
 let x = setInterval(function() {
   let now = new Date().getTime();

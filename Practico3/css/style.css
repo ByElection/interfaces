@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 
 @font-face {
   font-family: "Saiyan";
@@ -9,8 +12,8 @@
   position: absolute;
   background-repeat: repeat-y;
   background-size:cover;
-  width: 100%;
-  height: 750px;
+  width: 100vw;
+  height: 100vh;
 }
 @keyframes auramove {
   0% {background-position-y: 0px}
@@ -22,7 +25,7 @@
 }
 @keyframes gokuzoom {
   100% {
-    transform: translateY(0.3vh) scale(4);
+    transform: translateY(-30vh) scale(4);
   }
 }
 #aura{
@@ -34,14 +37,16 @@
   background-repeat: no-repeat;
   animation: gokuzoom 5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0023s);
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #rayitas{
   background-image: url('../img/rayitas migatte no gokui.png');
   animation: rayitasmove 300s linear infinite;
 }
 .parallax {
-  height: 750px;
+  height: 100vh;
 }
 .contenido{
   width: 100%;
@@ -54,63 +59,157 @@
   background-attachment: fixed;
   position: absolute;
   background-size:cover;
-  width: 100%;
-  height: 800px;
+  width: 100vw;
+  height: 100vh;
 }
 .esfera{
-  width: 100px;
-  height: 100px;
+  width: 5vw;
+  height: 5vw;
   background-attachment: inherit;
+}
+@keyframes shenlong {
+  0%, 95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 #cielo{
   background-image: url("../img/cielo.png");
 }
 #tormenta{
   background-image: url("../img/tormenta.png");
-  opacity: 0;
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #pradera{
   background-image: url("../img/pradera.png");
 }
 #rayos{
   background-image: url("../img/rayos.png");
-  opacity: 0;
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
 }
 #praderaoscura{
   background-image: url("../img/pradera oscura.png");
-  opacity: 0;
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #shenlong{
   background-image: url("../img/shenlong.png");
-  opacity: 0;
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes movesfera1 {
+  0% {
+    transform: translateY(-150vh) translateX(-500vw);
+  }
+  100% {
+    transform: translateY(74vh) translateX(45vw);
+  }
+}
+@keyframes movesfera2 {
+  0% {
+    transform: translateY(-150vh) translateX(500vw);
+  }
+  100% {
+    transform: translateY(74vh) translateX(50vw);
+  }
+}
+@keyframes movesfera3 {
+  0% {
+    transform: translateY(-400vh) translateX(-500vw);
+  }
+  100% {
+    transform: translateY(80vh) translateX(42.5vw);
+  }
+}
+@keyframes movesfera5 {
+  0% {
+    transform: translateY(-400vh) translateX(500vw);
+  }
+  100% {
+    transform: translateY(80vh) translateX(52.5vw);
+  }
+}
+@keyframes movesfera6 {
+  0% {
+    transform: translateY(-700vh) translateX(-500vw);
+  }
+  100% {
+    transform: translateY(86vh) translateX(45vw);
+  }
+}
+@keyframes movesfera7 {
+  0% {
+    transform: translateY(-700vh) translateX(500vw);
+  }
+  100% {
+    transform: translateY(86vh) translateX(50vw);
+  }
 }
 #esfera1{
   background-image: url("../img/esfera 1.png");
-  transform: translateY(100px) translateX(0px);
+  animation: movesfera1 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #esfera2{
   background-image: url("../img/esfera 2.png");
-  transform: translateY(100px) translateX(1000px);
+  animation: movesfera2 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #esfera3{
   background-image: url("../img/esfera 3.png");
-  transform: translateY(300px) translateX(0px);
+  animation: movesfera3 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #esfera4{
   background-image: url("../img/esfera 4.png");
-  transform: translateY(300px) translateX(1000px);
+  transform: translateY(80vh) translateX(47.5vw);
 }
 #esfera5{
   background-image: url("../img/esfera 5.png");
-  transform: translateY(500px) translateX(0px);
+  animation: movesfera5 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #esfera6{
   background-image: url("../img/esfera 6.png");
-  transform: translateY(500px) translateX(1000px);
+  animation: movesfera6 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #esfera7{
   background-image: url("../img/esfera 7.png");
-  transform: translateY(700px) translateX(600px);
+  animation: movesfera7 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 h1{
   text-align: center;
