@@ -27,10 +27,10 @@ function cargar(contenedor, contenido) {
     fetch("../html/"+contenido+".html").then(response =>{
       document.querySelector("."+contenedor).innerHTML = response;
       console.log(response);
+      if (contenido === "home"){
+        loadhome();
+      }
     });
-    if (contenido === "home"){
-      loadhome();
-    }
   },5000);
 }
 function loadhome() {
