@@ -35,6 +35,7 @@ function cargar(contenedor, contenido) {
             document.querySelector("."+contenedor).innerHTML = text;
             if (contenido === "home"){
               loadhome();
+            }
           });
         });
       },5000);
