@@ -19,27 +19,6 @@ window.addEventListener('scroll', () => {
   let scroll = window.scrollY;
   document.body.style.setProperty('--scroll',scroll);
 }, false);
-
-cargar("pagina","home");
-function cargar(contenedor, contenido) {
-  fetch("https://byelection.github.io/interfaces/Practico3/html/cargando.html").then(response =>{
-    response.text().then(text =>{
-      document.querySelector("."+contenedor).innerHTML = text;
-    }).then(function() {
-      setTimeout(function() {
-        fetch("https://byelection.github.io/interfaces/Practico3/html/"+contenido+".html").then(response =>{
-          response.text().then(text =>{
-            document.querySelector("."+contenedor).innerHTML = text;
-            console.log(text);
-            if (contenido === "home"){
-              loadhome();
-            }
-          });
-        });
-      },5000);
-    });
-  });
-}
 function loadhome() {
   countdown();
   setInterval(function() {
@@ -50,3 +29,4 @@ function loadhome() {
     }
   },500);
 }
+loadhome();
