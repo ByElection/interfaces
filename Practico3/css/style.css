@@ -1,5 +1,6 @@
 body{
   overflow-x: hidden;
+  background-color: #000000;
 }
 
 @font-face {
@@ -264,4 +265,20 @@ h2{
   background-color: #FFFF00;
   font-weight: bold;
   font-size: 17px;
+}
+@keyframes cargar {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 430px;
+  }
+}
+#cargando{
+  transform: translateX(45vw) translateY(45vh);
+  height: 70px;
+  width: 70px;
+  background-image: url("../img/spritesheet goku.png");
+  background-repeat: repeat-x;
+  animation: cargar 2s steps(6) infinite;
 }

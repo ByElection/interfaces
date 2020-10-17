@@ -30,7 +30,6 @@ function cargar(contenedor, contenido) {
         fetch("../html/"+contenido+".html").then(response =>{
           response.text().then(text =>{
             document.querySelector("."+contenedor).innerHTML = text;
-            console.log(text);
             if (contenido === "home"){
               loadhome();
             }
@@ -39,6 +38,32 @@ function cargar(contenedor, contenido) {
       },5000);
     });
   });
+}
+function eventos() {
+  document.querySelector("#conocerpersonajes").addEventListener("click",function() {
+    cargar("contenido", "conocerpersonajes");
+  }
+  document.querySelector("#vereventos").addEventListener("click",function() {
+    cargar("contenido", "vereventos");
+  }
+  document.querySelector("#mensajegoku").addEventListener("click",function() {
+    cargar("contenido", "mensajegoku");
+  }
+  document.querySelector("#revivirkrilin").addEventListener("click",function() {
+
+  }
+  document.querySelector("#crecer5cm").addEventListener("click",function() {
+
+  }
+  document.querySelector("#viajartiempo").addEventListener("click",function() {
+
+  }
+  document.querySelector("#inmortal").addEventListener("click",function() {
+
+  }
+  document.querySelector("#resscell").addEventListener("click",function() {
+
+  }
 }
 function loadhome() {
   countdown();
