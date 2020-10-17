@@ -48,19 +48,11 @@ body{
 .parallax {
   height: 100vh;
 }
-.contenido{
+.invocacion{
   width: 100%;
   background-color: white;
   position: relative;
   background-size: contain;
-}
-.layer2{
-  margin: 0;
-  background-attachment: fixed;
-  position: absolute;
-  background-size:cover;
-  width: 100vw;
-  height: 100vh;
 }
 .esfera{
   width: 5vw;
@@ -68,7 +60,15 @@ body{
   background-attachment: inherit;
 }
 @keyframes shenlong {
-  0%, 95% {
+  0%, 99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ambiente {
+  0%, 80% {
     opacity: 0;
   }
   100% {
@@ -80,9 +80,9 @@ body{
 }
 #tormenta{
   background-image: url("../img/tormenta.png");
-  animation: shenlong 2.5s linear infinite;
+  animation: ambiente 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -91,15 +91,15 @@ body{
 }
 #rayos{
   background-image: url("../img/rayos.png");
-  animation: shenlong 2.5s linear infinite;
+  animation: ambiente 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
 }
 #praderaoscura{
   background-image: url("../img/pradera oscura.png");
-  animation: shenlong 2.5s linear infinite;
+  animation: ambiente 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -107,13 +107,32 @@ body{
   background-image: url("../img/shenlong.png");
   animation: shenlong 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
+#dialogo{
+  background-image: url("../img/dialogo.png");
+  transform: translate(93vh,-2vw);
+  width: 40vw;
+  height: 67vh;
+  background-attachment: inherit;
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#dialogo p{
+  margin-top: 24vh;
+  color: white;
+  text-align: center;
+  font-size: 7vh;
+  font-weight: bold;
+}
 @keyframes movesfera1 {
   0% {
-    transform: translateY(-150vh) translateX(-500vw);
+    transform: translateY(-150vh) translateX(-200vw);
   }
   100% {
     transform: translateY(74vh) translateX(45vw);
@@ -121,7 +140,7 @@ body{
 }
 @keyframes movesfera2 {
   0% {
-    transform: translateY(-150vh) translateX(500vw);
+    transform: translateY(-150vh) translateX(200vw);
   }
   100% {
     transform: translateY(74vh) translateX(50vw);
@@ -129,7 +148,7 @@ body{
 }
 @keyframes movesfera3 {
   0% {
-    transform: translateY(-400vh) translateX(-500vw);
+    transform: translateY(-400vh) translateX(-200vw);
   }
   100% {
     transform: translateY(80vh) translateX(42.5vw);
@@ -137,7 +156,7 @@ body{
 }
 @keyframes movesfera5 {
   0% {
-    transform: translateY(-400vh) translateX(500vw);
+    transform: translateY(-400vh) translateX(200vw);
   }
   100% {
     transform: translateY(80vh) translateX(52.5vw);
@@ -145,7 +164,7 @@ body{
 }
 @keyframes movesfera6 {
   0% {
-    transform: translateY(-700vh) translateX(-500vw);
+    transform: translateY(-700vh) translateX(-200vw);
   }
   100% {
     transform: translateY(86vh) translateX(45vw);
@@ -153,7 +172,7 @@ body{
 }
 @keyframes movesfera7 {
   0% {
-    transform: translateY(-700vh) translateX(500vw);
+    transform: translateY(-700vh) translateX(200vw);
   }
   100% {
     transform: translateY(86vh) translateX(50vw);
@@ -163,7 +182,7 @@ body{
   background-image: url("../img/esfera 1.png");
   animation: movesfera1 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -171,7 +190,7 @@ body{
   background-image: url("../img/esfera 2.png");
   animation: movesfera2 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -179,7 +198,7 @@ body{
   background-image: url("../img/esfera 3.png");
   animation: movesfera3 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -191,7 +210,7 @@ body{
   background-image: url("../img/esfera 5.png");
   animation: movesfera5 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -199,7 +218,7 @@ body{
   background-image: url("../img/esfera 6.png");
   animation: movesfera6 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -207,7 +226,7 @@ body{
   background-image: url("../img/esfera 7.png");
   animation: movesfera7 2.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
@@ -218,8 +237,29 @@ h1{
   color: #FF6628;
 }
 h2{
+  margin-bottom: 0;
   text-align: center;
   font-family: "Saiyan";
   font-size: 50px;
   color: #FF6628;
+}
+.dropdown-menu{
+  background-color: #FF6628;
+}
+#deseos{
+  transform: translateX(65vw) translateY(82vh);
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#deseos button{
+  width:11.5vw;
+}
+#deseos>button{
+  color: #000000;
+  background-color: #FFFF00;
+  font-weight: bold;
+  font-size: 17px;
 }
