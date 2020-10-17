@@ -7,7 +7,6 @@ function cargar(contenedor, contenido) {
         fetch("../html/"+contenido+".html").then(response =>{
           response.text().then(text =>{
             document.querySelector("."+contenedor).innerHTML = text;
-            console.log(text);
           });
         });
       },5000);
