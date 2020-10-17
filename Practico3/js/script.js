@@ -25,8 +25,10 @@ function cargar(contenedor, contenido) {
   document.querySelector("."+contenedor).innerHTML = fetch("https://byelection.github.io/interfaces/Practico3/html/cargando.html").then(function() {
     setTimeout(function() {
       fetch("https://byelection.github.io/interfaces/Practico3/html/"+contenido+".html").then(response =>{
-        document.querySelector("."+contenedor).innerHTML = response.text;
-        console.log(response.text);
+        response.text().then(text =>{
+          document.querySelector("."+contenedor).innerHTML = text;
+          console.log(text);
+        }
         if (contenido === "home"){
           loadhome();
         }
