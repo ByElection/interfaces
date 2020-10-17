@@ -283,3 +283,7 @@ h2{
   background-repeat: repeat-x;
   animation: cargar 2s steps(6) infinite;
 }
+.dimensionescontenido{
+  width: 100vw;
+  height: 100vh;
+}

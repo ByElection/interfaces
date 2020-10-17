@@ -32,6 +32,8 @@ function cargar(contenedor, contenido) {
             document.querySelector("."+contenedor).innerHTML = text;
             if (contenido === "home"){
               loadhome();
+            }else {
+              dimensionarcontenido();
             }
           });
         });
@@ -64,6 +66,12 @@ function eventos() {
   document.querySelector("#resscell").addEventListener("click",function() {
 
   });
+}
+function dimensionarcontenido() {
+  let contenido = document.querySelector(".contenido");
+  if (!contenido.classList.contains("dimensionescontenido")) {
+    contenido.classList.add("dimensionescontenido");
+  }
 }
 function loadhome() {
   countdown();
