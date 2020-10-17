@@ -25,6 +25,9 @@ function cargar(contenedor, contenido) {
   fetch("../html/cargando.html").then(response =>{
     response.text().then(text =>{
       document.querySelector("."+contenedor).innerHTML = text;
+      if (contenido != "home") {
+        dimensionarcontenido();
+      }
     }).then(function() {
       setTimeout(function() {
         fetch("../html/"+contenido+".html").then(response =>{
@@ -32,9 +35,6 @@ function cargar(contenedor, contenido) {
             document.querySelector("."+contenedor).innerHTML = text;
             if (contenido === "home"){
               loadhome();
-            }else {
-              dimensionarcontenido();
-            }
           });
         });
       },5000);
