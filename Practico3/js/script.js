@@ -28,10 +28,10 @@ function cargar(contenedor, contenido) {
         response.text().then(text =>{
           document.querySelector("."+contenedor).innerHTML = text;
           console.log(text);
-        }
-        if (contenido === "home"){
-          loadhome();
-        }
+          if (contenido === "home"){
+            loadhome();
+          }
+        });
       });
     },5000);
   });
