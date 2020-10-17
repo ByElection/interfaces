@@ -22,16 +22,17 @@ window.addEventListener('scroll', () => {
 
 cargar("pagina","home");
 function cargar(contenedor, contenido) {
-  document.querySelector("."+contenedor).innerHTML = fetch("../html/cargando.html");
-  setTimeout(function() {
-    fetch("../html/"+contenido+".html").then(response =>{
-      document.querySelector("."+contenedor).innerHTML = response.body;
-      console.log(response);
-      if (contenido === "home"){
-        loadhome();
-      }
-    });
-  },5000);
+  document.querySelector("."+contenedor).innerHTML = fetch("../html/cargando.html").then(function() {
+    setTimeout(function() {
+      fetch("../html/"+contenido+".html").then(response =>{
+        document.querySelector("."+contenedor).innerHTML = response.body;
+        console.log(response);
+        if (contenido === "home"){
+          loadhome();
+        }
+      });
+    },5000);
+  });
 }
 function loadhome() {
   countdown();
