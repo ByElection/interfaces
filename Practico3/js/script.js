@@ -22,12 +22,12 @@ window.addEventListener('scroll', () => {
 
 cargar("pagina","home");
 function cargar(contenedor, contenido) {
-  fetch("https://byelection.github.io/interfaces/Practico3/html/cargando.html").then(response =>{
+  fetch("../html/cargando.html").then(response =>{
     response.text().then(text =>{
       document.querySelector("."+contenedor).innerHTML = text;
     }).then(function() {
       setTimeout(function() {
-        fetch("https://byelection.github.io/interfaces/Practico3/html/"+contenido+".html").then(response =>{
+        fetch("../html/"+contenido+".html").then(response =>{
           response.text().then(text =>{
             document.querySelector("."+contenedor).innerHTML = text;
             console.log(text);
