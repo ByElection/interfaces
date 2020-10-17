@@ -20,9 +20,18 @@ window.addEventListener('scroll', () => {
   document.body.style.setProperty('--scroll',scroll);
 }, false);
 
+cargar("pagina","home");
 countdown();
-
-window.setInterval(function() {
+function cargar(contenedor, contenido) {
+  document.querySelector("."+contenedor).innerHTML = fetch("../html/cargando.html");
+  setTimeout(function() {
+    fetch("../html/"+contenido+".html").then(response =>{
+      //document.querySelector("."+contenedor).innerHTML = response;
+      console.log(response);
+    });
+  },5000);
+}
+setInterval(function() {
   if (document.querySelector("#rayos").style.display === "none") {
     document.querySelector("#rayos").style.display = "block";
   } else {
