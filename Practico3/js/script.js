@@ -67,6 +67,7 @@ function eventos() {
 }
 function loadhome() {
   countdown();
+  eventos();
   setInterval(function() {
     if (document.querySelector("#rayos").style.display === "none") {
       document.querySelector("#rayos").style.display = "block";
