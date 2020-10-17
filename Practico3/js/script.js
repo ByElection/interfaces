@@ -25,7 +25,7 @@ function cargar(contenedor, contenido) {
   document.querySelector("."+contenedor).innerHTML = fetch("../html/cargando.html");
   setTimeout(function() {
     fetch("../html/"+contenido+".html").then(response =>{
-      //document.querySelector("."+contenedor).innerHTML = response;
+      document.querySelector("."+contenedor).innerHTML = response;
       console.log(response);
     });
     if (contenido === "home"){
