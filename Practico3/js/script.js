@@ -21,7 +21,6 @@ window.addEventListener('scroll', () => {
 }, false);
 
 cargar("pagina","home");
-countdown();
 function cargar(contenedor, contenido) {
   document.querySelector("."+contenedor).innerHTML = fetch("../html/cargando.html");
   setTimeout(function() {
@@ -29,12 +28,18 @@ function cargar(contenedor, contenido) {
       //document.querySelector("."+contenedor).innerHTML = response;
       console.log(response);
     });
+    if (contenido === "home"){
+      loadhome();
+    }
   },5000);
 }
-setInterval(function() {
-  if (document.querySelector("#rayos").style.display === "none") {
-    document.querySelector("#rayos").style.display = "block";
-  } else {
-    document.querySelector("#rayos").style.display = "none";
-  }
-},500);
+function loadhome() {
+  countdown();
+  setInterval(function() {
+    if (document.querySelector("#rayos").style.display === "none") {
+      document.querySelector("#rayos").style.display = "block";
+    } else {
+      document.querySelector("#rayos").style.display = "none";
+    }
+  },500);
+}
