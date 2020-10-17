@@ -35,7 +35,7 @@ body{
 #goku{
   background-image: url('../img/goku migatte no gokui.png');
   background-repeat: no-repeat;
-  animation: gokuzoom 5s linear infinite;
+  animation: gokuzoom 5s linear;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -0.0025s);
   animation-iteration-count: 1;
@@ -94,6 +94,8 @@ body{
   animation: ambiente 2.5s linear infinite;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 #praderaoscura{
   background-image: url("../img/pradera oscura.png");

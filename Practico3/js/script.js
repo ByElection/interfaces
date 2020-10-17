@@ -19,3 +19,13 @@ window.addEventListener('scroll', () => {
   let scroll = window.scrollY;
   document.body.style.setProperty('--scroll',scroll);
 }, false);
+
+countdown();
+
+window.setInterval(function() {
+  if (document.querySelector("#rayos").style.display === "none") {
+    document.querySelector("#rayos").style.display = "block";
+  } else {
+    document.querySelector("#rayos").style.display = "none";
+  }
+},500);
