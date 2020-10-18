@@ -1,8 +1,11 @@
 body{
+  overflow-y: auto;
   overflow-x: hidden;
   background-color: #000000;
 }
-
+body.denegarscroll{
+  overflow-y: hidden;
+}
 @font-face {
   font-family: "Saiyan";
   src: url("../font/Saiyan-Sans.ttf");
@@ -50,7 +53,7 @@ body{
   height: 100vh;
 }
 .invocacion{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: white;
   position: relative;
@@ -110,6 +113,7 @@ body{
 #shenlong{
   background-image: url("../img/shenlong.png");
   animation: shenlong 2.5s linear infinite;
+  background-attachment: inherit;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -0.0027s);
   animation-iteration-count: 1;
@@ -128,8 +132,10 @@ body{
   animation-fill-mode: both;
 }
 #dialogo p{
-  margin-top: 24vh;
-  color: white;
+  margin-top: 15vh;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  color: #FF6628;
   text-align: center;
   font-size: 7vh;
   font-weight: bold;
@@ -283,7 +289,101 @@ h2{
   background-repeat: repeat-x;
   animation: cargar 2s steps(6) infinite;
 }
-.dimensionescontenido{
+.hide{
+  display:none;
+}
+.contenido{
+  margin-top: 10vh;
   width: 100vw;
   height: 100vh;
+}
+@keyframes animaentrada {
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+@keyframes animasalida {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(0);
+  }
+}
+.entrada{
+  animation: animaentrada 1s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.salida{
+  animation: animasalida 1s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#avatararale{
+  background-image: url("../img/avatar arale.png");
+
+}
+#avatargoku{
+  background-image: url("../img/avatar goku.png");
+
+}
+#avatarbulma{
+  background-image: url("../img/avatar bulma.png");
+
+}
+#avatarvegeta{
+  background-image: url("../img/avatar vegeta.png");
+
+}
+#avatarwhis{
+  background-image: url("../img/avatar whis.png");
+
+}
+#avatarcell{
+  background-image: url("../img/avatar cell.png");
+
+}
+#avatarkrilin{
+  background-image: url("../img/avatar krilin.png");
+
+}
+#avatarroshi{
+  background-image: url("../img/avatar roshi.png");
+
+}
+#avatarsatan{
+  background-image: url("../img/avatar satan.png");
+
+}
+#avatarbills{
+  background-image: url("../img/avatar bills.png");
+
+}
+@keyframes avatarefect {
+  to{
+    transform: rotate3d(0,1,0,360deg)
+  }
+}
+.avatar:hover{
+  animation: avatarefect 3s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.avatar{
+  height: 30vh;
+  background-size: cover;
+}
+.avatar-label div{
+  text-align: center;
+  font-family: "Saiyan";
+  font-size: 30px;
+  color: #FFFF00;
+}
+#volver img{
+  width: 100px;
+  height: 100px;
 }
