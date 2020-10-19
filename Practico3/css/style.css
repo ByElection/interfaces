@@ -135,7 +135,8 @@ body.denegarscroll{
   margin-top: 15vh;
   margin-left: 4vw;
   margin-right: 4vw;
-  color: #FF6628;
+  color: #FFFF00;
+  -webkit-text-stroke: 2px black;
   text-align: center;
   font-size: 7vh;
   font-weight: bold;
@@ -242,6 +243,8 @@ body.denegarscroll{
 }
 h1{
   text-align: center;
+  letter-spacing: 5px;
+  -webkit-text-stroke: 2px black;
   font-family: "Saiyan";
   font-size: 100px;
   color: #FF6628;
@@ -282,12 +285,12 @@ h2{
   }
 }
 #cargando{
-  transform: translateX(45vw) translateY(45vh);
+  transform: scale(2) translateX(23vw) translateY(20vh);
   height: 70px;
   width: 70px;
   background-image: url("../img/spritesheet goku.png");
   background-repeat: repeat-x;
-  animation: cargar 2s steps(6) infinite;
+  animation: cargar 1.5s steps(6) infinite;
 }
 .hide{
   display:none;
@@ -386,4 +389,52 @@ h2{
 #volver img{
   width: 100px;
   height: 100px;
+}
+.imgacordion{
+  width: 100%;
+}
+@keyframes moverimg{
+  0%,50%,100% {
+    transform: rotate3d(1,1,1,0deg);
+  }
+  25% {
+    transform: rotate3d(1,1,1,-25deg);
+  }
+  75% {
+    transform: rotate3d(1,1,1,25deg);
+  }
+}
+.imgacordion:hover{
+  animation: moverimg 3s linear infinite;
+}
+@keyframes terremoto {
+  0%{
+    transform: translate(0,0);
+  }
+  25%{
+    transform: translate(3px,0);
+  }
+  50%{
+    transform: translate(3px,3px);
+  }
+  100%{
+    transform: translate(0,3px);
+  }
+}
+div.form-group input:focus,div.form-group textarea:focus{
+  animation: terremoto 0.3s linear infinite;
+}
+@keyframes animacionboton {
+  to {
+    transform: scale(1.2);
+  }
+}
+.animaboton{
+  animation: animacionboton 0.2s linear infinite;
+}
+#testigo{
+  margin-left: 5px;
+}
+form{
+  color: white;
 }

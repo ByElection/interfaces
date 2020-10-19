@@ -20,7 +20,6 @@ window.addEventListener('scroll', () => {
   document.body.style.setProperty('--scroll',scroll);
 }, false);
 
-cargar("pagina","home");
 function cargar(contenedor, contenido) {
   fetch("../html/cargando.html").then(response =>{
     response.text().then(text =>{
@@ -42,10 +41,13 @@ function cargar(contenedor, contenido) {
             }else {
               animaentrada();
               eventovolver();
+              if (contenido === "mensajegoku") {
+                eventosform();
+              }
             }
           });
         });
-      },2000);
+      },3000);
     });
   });
 }
@@ -120,3 +122,17 @@ function loadhome() {
     document.querySelector("#rayos").classList.toggle("hide");
   },500);
 }
+function eventosform(){
+  document.querySelector("#enviarmensaje").addEventListener("click",function(event) {
+    event.preventDefault();
+    document.querySelector("#enviarmensaje").classList.add("animaboton");
+    document.querySelector("#testigo").innerHTML = "Se envio el mensaje con exito";
+    setTimeout(function() {
+      document.querySelector("#testigo").innerHTML = "";
+      document.querySelector("#enviarmensaje").classList.remove("animaboton");
+    },2000);
+  })
+}
+
+alert("ALGUNAS ANIMACIONES DEL HERO SOLO SE APRECIAN BIEN CON RESOLUCION DE ESCRITORIO 1920x1080 POR LO QUE PODRIA NO VERSE EL MENU HAMBURGUESA ASI QUE SI VES ESTE ALERT ES PORQUE EN LAS 24 HORAS QUE QUEDAN PARA LA ENTREGA NO LOGRE ADAPTARLO A TODAS LAS RESOLUCIONES");
+cargar("pagina","home");
