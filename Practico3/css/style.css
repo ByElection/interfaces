@@ -1,0 +1,440 @@
+body{
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #000000;
+}
+body.denegarscroll{
+  overflow-y: hidden;
+}
+@font-face {
+  font-family: "Saiyan";
+  src: url("../font/Saiyan-Sans.ttf");
+}
+.layer{
+  margin: 0;
+  background-attachment: fixed;
+  position: absolute;
+  background-repeat: repeat-y;
+  background-size:cover;
+  width: 100vw;
+  height: 100vh;
+}
+@keyframes auramove {
+  0% {background-position-y: 0px}
+  100% {background-position-y: 65536px}
+}
+@keyframes rayitasmove {
+  0% {background-position-y: 65536px}
+  100% {background-position-y: 0px}
+}
+@keyframes gokuzoom {
+  100% {
+    transform: translateY(-30vh) scale(4);
+  }
+}
+#aura{
+  background-image: url('../img/aura migatte no gokui.png');
+  animation: auramove 200s linear infinite;
+}
+#goku{
+  background-image: url('../img/goku migatte no gokui.png');
+  background-repeat: no-repeat;
+  animation: gokuzoom 5s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0025s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#rayitas{
+  background-image: url('../img/rayitas migatte no gokui.png');
+  animation: rayitasmove 300s linear infinite;
+}
+.parallax {
+  height: 100vh;
+}
+.invocacion{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+  background-size: contain;
+}
+.esfera{
+  width: 5vw;
+  height: 5vw;
+  background-attachment: inherit;
+}
+@keyframes shenlong {
+  0%, 99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ambiente {
+  0%, 80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#cielo{
+  background-image: url("../img/cielo.png");
+}
+#tormenta{
+  background-image: url("../img/tormenta.png");
+  animation: ambiente 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#pradera{
+  background-image: url("../img/pradera.png");
+}
+#rayos{
+  background-image: url("../img/rayos.png");
+  animation: ambiente 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#praderaoscura{
+  background-image: url("../img/pradera oscura.png");
+  animation: ambiente 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#shenlong{
+  background-image: url("../img/shenlong.png");
+  animation: shenlong 2.5s linear infinite;
+  background-attachment: inherit;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#dialogo{
+  background-image: url("../img/dialogo.png");
+  transform: translate(93vh,-2vw);
+  width: 40vw;
+  height: 67vh;
+  background-attachment: inherit;
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#dialogo p{
+  margin-top: 15vh;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  color: #FFFF00;
+  -webkit-text-stroke: 2px black;
+  text-align: center;
+  font-size: 7vh;
+  font-weight: bold;
+}
+@keyframes movesfera1 {
+  0% {
+    transform: translateY(-150vh) translateX(-200vw);
+  }
+  100% {
+    transform: translateY(74vh) translateX(45vw);
+  }
+}
+@keyframes movesfera2 {
+  0% {
+    transform: translateY(-150vh) translateX(200vw);
+  }
+  100% {
+    transform: translateY(74vh) translateX(50vw);
+  }
+}
+@keyframes movesfera3 {
+  0% {
+    transform: translateY(-400vh) translateX(-200vw);
+  }
+  100% {
+    transform: translateY(80vh) translateX(42.5vw);
+  }
+}
+@keyframes movesfera5 {
+  0% {
+    transform: translateY(-400vh) translateX(200vw);
+  }
+  100% {
+    transform: translateY(80vh) translateX(52.5vw);
+  }
+}
+@keyframes movesfera6 {
+  0% {
+    transform: translateY(-700vh) translateX(-200vw);
+  }
+  100% {
+    transform: translateY(86vh) translateX(45vw);
+  }
+}
+@keyframes movesfera7 {
+  0% {
+    transform: translateY(-700vh) translateX(200vw);
+  }
+  100% {
+    transform: translateY(86vh) translateX(50vw);
+  }
+}
+#esfera1{
+  background-image: url("../img/esfera 1.png");
+  animation: movesfera1 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#esfera2{
+  background-image: url("../img/esfera 2.png");
+  animation: movesfera2 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#esfera3{
+  background-image: url("../img/esfera 3.png");
+  animation: movesfera3 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#esfera4{
+  background-image: url("../img/esfera 4.png");
+  transform: translateY(80vh) translateX(47.5vw);
+}
+#esfera5{
+  background-image: url("../img/esfera 5.png");
+  animation: movesfera5 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#esfera6{
+  background-image: url("../img/esfera 6.png");
+  animation: movesfera6 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#esfera7{
+  background-image: url("../img/esfera 7.png");
+  animation: movesfera7 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+h1{
+  text-align: center;
+  letter-spacing: 5px;
+  -webkit-text-stroke: 2px black;
+  font-family: "Saiyan";
+  font-size: 100px;
+  color: #FF6628;
+}
+h2{
+  margin-bottom: 0;
+  text-align: center;
+  font-family: "Saiyan";
+  font-size: 50px;
+  color: #FF6628;
+}
+.dropdown-menu{
+  background-color: #FF6628;
+}
+#deseos{
+  transform: translateX(65vw) translateY(82vh);
+  animation: shenlong 2.5s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -0.0027s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#deseos button{
+  width:11.5vw;
+}
+#deseos>button{
+  color: #000000;
+  background-color: #FFFF00;
+  font-weight: bold;
+  font-size: 17px;
+}
+@keyframes cargar {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 430px;
+  }
+}
+#cargando{
+  transform: scale(2) translateX(23vw) translateY(20vh);
+  height: 70px;
+  width: 70px;
+  background-image: url("../img/spritesheet goku.png");
+  background-repeat: repeat-x;
+  animation: cargar 1.5s steps(6) infinite;
+}
+.hide{
+  display:none;
+}
+.contenido{
+  margin-top: 10vh;
+  width: 100vw;
+  height: 100vh;
+}
+@keyframes animaentrada {
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+@keyframes animasalida {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(0);
+  }
+}
+.entrada{
+  animation: animaentrada 1s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.salida{
+  animation: animasalida 1s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#avatararale{
+  background-image: url("../img/avatar arale.png");
+
+}
+#avatargoku{
+  background-image: url("../img/avatar goku.png");
+
+}
+#avatarbulma{
+  background-image: url("../img/avatar bulma.png");
+
+}
+#avatarvegeta{
+  background-image: url("../img/avatar vegeta.png");
+
+}
+#avatarwhis{
+  background-image: url("../img/avatar whis.png");
+
+}
+#avatarcell{
+  background-image: url("../img/avatar cell.png");
+
+}
+#avatarkrilin{
+  background-image: url("../img/avatar krilin.png");
+
+}
+#avatarroshi{
+  background-image: url("../img/avatar roshi.png");
+
+}
+#avatarsatan{
+  background-image: url("../img/avatar satan.png");
+
+}
+#avatarbills{
+  background-image: url("../img/avatar bills.png");
+
+}
+@keyframes avatarefect {
+  to{
+    transform: rotate3d(0,1,0,360deg)
+  }
+}
+.avatar:hover{
+  animation: avatarefect 3s linear infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.avatar{
+  height: 30vh;
+  background-size: cover;
+}
+.avatar-label div{
+  text-align: center;
+  font-family: "Saiyan";
+  font-size: 30px;
+  color: #FFFF00;
+}
+#volver img{
+  width: 100px;
+  height: 100px;
+}
+.imgacordion{
+  width: 100%;
+}
+@keyframes moverimg{
+  0%,50%,100% {
+    transform: rotate3d(1,1,1,0deg);
+  }
+  25% {
+    transform: rotate3d(1,1,1,-25deg);
+  }
+  75% {
+    transform: rotate3d(1,1,1,25deg);
+  }
+}
+.imgacordion:hover{
+  animation: moverimg 3s linear infinite;
+}
+@keyframes terremoto {
+  0%{
+    transform: translate(0,0);
+  }
+  25%{
+    transform: translate(3px,0);
+  }
+  50%{
+    transform: translate(3px,3px);
+  }
+  100%{
+    transform: translate(0,3px);
+  }
+}
+div.form-group input:focus,div.form-group textarea:focus{
+  animation: terremoto 0.3s linear infinite;
+}
+@keyframes animacionboton {
+  to {
+    transform: scale(1.2);
+  }
+}
+.animaboton{
+  animation: animacionboton 0.2s linear infinite;
+}
+#testigo{
+  margin-left: 5px;
+}
+form{
+  color: white;
+}
